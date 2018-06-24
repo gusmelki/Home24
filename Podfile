@@ -6,5 +6,7 @@ target 'Home24' do
   use_frameworks!
 
   pod 'Moya/RxSwift', '~> 11.0'
+  pod 'Koloda', '~> 4.3.1'
+  pod 'SDWebImage', '~> 4.0'
 
 end

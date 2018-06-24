@@ -18,6 +18,13 @@
 		EC1B167D20E0296A00866F42 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B167C20E0296A00866F42 /* Articles.swift */; };
 		EC1B167F20E02BC700866F42 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B167E20E02BC700866F42 /* Article.swift */; };
 		EC1B168120E0335C00866F42 /* Embedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B168020E0335C00866F42 /* Embedded.swift */; };
+		EC1B168520E03DE100866F42 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B168420E03DE100866F42 /* Media.swift */; };
+		EC1B168D20E046AE00866F42 /* SelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B168720E046AE00866F42 /* SelectionPresenter.swift */; };
+		EC1B168E20E046AE00866F42 /* SelectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B168820E046AE00866F42 /* SelectionWorker.swift */; };
+		EC1B168F20E046AE00866F42 /* SelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B168920E046AE00866F42 /* SelectionRouter.swift */; };
+		EC1B169020E046AE00866F42 /* SelectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B168A20E046AE00866F42 /* SelectionModels.swift */; };
+		EC1B169120E046AE00866F42 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B168B20E046AE00866F42 /* SelectionViewController.swift */; };
+		EC1B169220E046AE00866F42 /* SelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B168C20E046AE00866F42 /* SelectionInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		EC1B167C20E0296A00866F42 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		EC1B167E20E02BC700866F42 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		EC1B168020E0335C00866F42 /* Embedded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedded.swift; sourceTree = "<group>"; };
+		EC1B168420E03DE100866F42 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		EC1B168720E046AE00866F42 /* SelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionPresenter.swift; sourceTree = "<group>"; };
+		EC1B168820E046AE00866F42 /* SelectionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionWorker.swift; sourceTree = "<group>"; };
+		EC1B168920E046AE00866F42 /* SelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionRouter.swift; sourceTree = "<group>"; };
+		EC1B168A20E046AE00866F42 /* SelectionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModels.swift; sourceTree = "<group>"; };
+		EC1B168B20E046AE00866F42 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		EC1B168C20E046AE00866F42 /* SelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,7 @@
 		EC1B166520E0245800866F42 /* Home24 */ = {
 			isa = PBXGroup;
 			children = (
+				EC1B168620E0468700866F42 /* SelectionScene */,
 				EC1B168220E0346700866F42 /* Services */,
 				EC1B168320E034CA00866F42 /* Models */,
 				EC1B166620E0245800866F42 /* AppDelegate.swift */,
@@ -106,8 +121,22 @@
 				EC1B167C20E0296A00866F42 /* Articles.swift */,
 				EC1B168020E0335C00866F42 /* Embedded.swift */,
 				EC1B167E20E02BC700866F42 /* Article.swift */,
+				EC1B168420E03DE100866F42 /* Media.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EC1B168620E0468700866F42 /* SelectionScene */ = {
+			isa = PBXGroup;
+			children = (
+				EC1B168B20E046AE00866F42 /* SelectionViewController.swift */,
+				EC1B168C20E046AE00866F42 /* SelectionInteractor.swift */,
+				EC1B168720E046AE00866F42 /* SelectionPresenter.swift */,
+				EC1B168A20E046AE00866F42 /* SelectionModels.swift */,
+				EC1B168820E046AE00866F42 /* SelectionWorker.swift */,
+				EC1B168920E046AE00866F42 /* SelectionRouter.swift */,
+			);
+			path = SelectionScene;
 			sourceTree = "<group>";
 		};
 		F9B18BD306D5AEDC298B7E44 /* Pods */ = {
@@ -196,16 +225,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Home24/Pods-Home24-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -239,11 +274,18 @@
 			files = (
 				EC1B167B20E0292000866F42 /* Home24Manager.swift in Sources */,
 				EC1B167D20E0296A00866F42 /* Articles.swift in Sources */,
+				EC1B169020E046AE00866F42 /* SelectionModels.swift in Sources */,
+				EC1B169120E046AE00866F42 /* SelectionViewController.swift in Sources */,
 				EC1B168120E0335C00866F42 /* Embedded.swift in Sources */,
+				EC1B168F20E046AE00866F42 /* SelectionRouter.swift in Sources */,
 				EC1B166920E0245800866F42 /* ViewController.swift in Sources */,
+				EC1B168D20E046AE00866F42 /* SelectionPresenter.swift in Sources */,
 				EC1B166720E0245800866F42 /* AppDelegate.swift in Sources */,
+				EC1B168E20E046AE00866F42 /* SelectionWorker.swift in Sources */,
 				EC1B167F20E02BC700866F42 /* Article.swift in Sources */,
+				EC1B168520E03DE100866F42 /* Media.swift in Sources */,
 				EC1B167920E025F000866F42 /* Home24Service.swift in Sources */,
+				EC1B169220E046AE00866F42 /* SelectionInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,11 +431,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q7DW66L7E4;
 				INFOPLIST_FILE = Home24/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.gustavoMelki.Home24;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -407,11 +447,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q7DW66L7E4;
 				INFOPLIST_FILE = Home24/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.gustavoMelki.Home24;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

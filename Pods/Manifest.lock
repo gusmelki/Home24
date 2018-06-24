@@ -1,30 +1,44 @@
 PODS:
   - Alamofire (4.7.2)
+  - Koloda (4.3.1):
+    - pop (~> 1.0)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - pop (1.0.10)
   - Result (3.2.4)
   - RxSwift (4.1.2)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
+  - Koloda (~> 4.3.1)
   - Moya/RxSwift (~> 11.0)
+  - SDWebImage (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Koloda
     - Moya
+    - pop
     - Result
     - RxSwift
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   Moya: a725035953bc1c0eb1be505ab903984501d82440
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: 54a59e23ba68c83fc5477385e7854cd8667933f8
+PODFILE CHECKSUM: 1605fdfc5bbc6dfc488b4ff68ec6f52d2372ac01
 
 COCOAPODS: 1.5.0
