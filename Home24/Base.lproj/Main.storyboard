@@ -65,13 +65,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vra-E3-dFv" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="37" y="128" width="300" height="331"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vra-E3-dFv" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="30" y="94" width="315" height="340"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1J5-r0-bOJ">
+                                <rect key="frame" x="20" y="587" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.3294117647" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jyY-id-b9T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="REVIEW ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reviewBtn:" destination="LMb-SK-KOs" eventType="touchUpInside" id="Eeu-rg-58e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAd-GP-u6U">
+                                <rect key="frame" x="71" y="463" width="65" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="❌"/>
+                                <connections>
+                                    <action selector="dislikeBtn:" destination="LMb-SK-KOs" eventType="touchUpInside" id="xhH-Qj-oEG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06k-9g-fy9">
+                                <rect key="frame" x="244" y="463" width="65" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="🤩"/>
+                                <connections>
+                                    <action selector="likeBtn:" destination="LMb-SK-KOs" eventType="touchUpInside" id="r65-hv-n09"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vra-E3-dFv" firstAttribute="leading" secondItem="f4H-GI-kFg" secondAttribute="leading" constant="30" id="3ye-VX-fxI"/>
+                            <constraint firstItem="vra-E3-dFv" firstAttribute="top" secondItem="f4H-GI-kFg" secondAttribute="top" constant="30" id="4Cl-hL-444"/>
+                            <constraint firstItem="f4H-GI-kFg" firstAttribute="trailing" secondItem="1J5-r0-bOJ" secondAttribute="trailing" constant="20" id="EVX-Gn-DaQ"/>
+                            <constraint firstItem="f4H-GI-kFg" firstAttribute="bottom" secondItem="1J5-r0-bOJ" secondAttribute="bottom" constant="30" id="G3T-zk-epi"/>
+                            <constraint firstItem="1J5-r0-bOJ" firstAttribute="top" secondItem="hAd-GP-u6U" secondAttribute="bottom" constant="40" id="LQW-Oo-6tv"/>
+                            <constraint firstItem="hAd-GP-u6U" firstAttribute="top" secondItem="vra-E3-dFv" secondAttribute="bottom" constant="29" id="MBZ-8o-nTh"/>
+                            <constraint firstItem="f4H-GI-kFg" firstAttribute="trailing" secondItem="vra-E3-dFv" secondAttribute="trailing" constant="30" id="fMN-3s-Dde"/>
+                            <constraint firstItem="hAd-GP-u6U" firstAttribute="leading" secondItem="f4H-GI-kFg" secondAttribute="leading" constant="71" id="gcN-eB-n0Z"/>
+                            <constraint firstItem="f4H-GI-kFg" firstAttribute="trailing" secondItem="06k-9g-fy9" secondAttribute="trailing" constant="66" id="oCo-G0-XM6"/>
+                            <constraint firstItem="1J5-r0-bOJ" firstAttribute="leading" secondItem="f4H-GI-kFg" secondAttribute="leading" constant="20" id="yrO-Sf-w7l"/>
+                            <constraint firstItem="06k-9g-fy9" firstAttribute="centerY" secondItem="hAd-GP-u6U" secondAttribute="centerY" id="zJ1-4C-TGK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f4H-GI-kFg"/>
                     </view>
                     <connections>

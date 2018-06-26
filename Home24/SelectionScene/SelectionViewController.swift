@@ -72,7 +72,6 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   }
   
   func displaySomething(viewModel: Selection.Something.ViewModel) {
-    //nameTextField.text = viewModel.name
     
     if let articles = viewModel.articles {
       for article in articles{
@@ -81,8 +80,22 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
     }
     
     selectionView.reloadData()
+  }
+  
+  @IBAction func likeBtn(_ sender: Any) {
+    selectionView?.swipe(.right)
+  }
+  
+  @IBAction func dislikeBtn(_ sender: Any) {
+    selectionView?.swipe(.left)
+  }
+  
+  @IBAction func reviewBtn(_ sender: Any) {
+    
     
   }
+  
+  
 }
 
 extension SelectionViewController: KolodaViewDelegate {
@@ -92,7 +105,7 @@ extension SelectionViewController: KolodaViewDelegate {
   }
   
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-    UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
+    
   }
   
 }
@@ -110,7 +123,7 @@ extension SelectionViewController: KolodaViewDataSource {
   }
   
   func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-    
+
     let imageview = UIImageView()
     imageview.sd_setImage(with: URL(string: (arrayArticles[index].media?.first?.uri)!))
     
