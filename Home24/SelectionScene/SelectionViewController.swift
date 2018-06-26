@@ -51,9 +51,7 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   // MARK: View lifecycle
   
   @IBOutlet weak var selectionView: KolodaView!
- 
-  
-  fileprivate var dataSource = [UIImage]()
+  var arrayArticles = [Article]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -78,7 +76,7 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
     
     if let articles = viewModel.articles {
       for article in articles{
-       // dataSource.append(UIImage)
+        arrayArticles.append(article)
       }
     }
     
@@ -90,11 +88,7 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
 extension SelectionViewController: KolodaViewDelegate {
   
   func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-    let position = selectionView.currentCardIndex
-    for i in 1...4 {
-      dataSource.append(UIImage(named: "Card_like_\(i)")!)
-    }
-    selectionView.insertCardAtIndexRange(position..<position + 4, animated: true)
+  
   }
   
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -108,7 +102,7 @@ extension SelectionViewController: KolodaViewDelegate {
 extension SelectionViewController: KolodaViewDataSource {
   
   func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-    return dataSource.count
+    return arrayArticles.count
   }
   
   func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -117,7 +111,10 @@ extension SelectionViewController: KolodaViewDataSource {
   
   func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
     
-    return UIImageView(image: dataSource[Int(index)])
+    let imageview = UIImageView()
+    imageview.sd_setImage(with: URL(string: (arrayArticles[index].media?.first?.uri)!))
+    
+    return imageview
   }
 }
 

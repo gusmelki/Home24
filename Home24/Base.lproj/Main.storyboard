@@ -66,14 +66,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vra-E3-dFv" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="32" y="179" width="311" height="308"/>
+                                <rect key="frame" x="37" y="128" width="300" height="331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvM-s2-QCK">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="308"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -81,7 +75,6 @@
                         <viewLayoutGuide key="safeArea" id="f4H-GI-kFg"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="gvM-s2-QCK" id="xnN-ol-VLi"/>
                         <outlet property="selectionView" destination="vra-E3-dFv" id="pSr-aG-dcj"/>
                     </connections>
                 </viewController>
