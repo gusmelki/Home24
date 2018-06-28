@@ -1,16 +1,9 @@
-//
-//  CollectionViewController.swift
-//  Home24
-//
-//  Created by Gustavo Melki Leal on 28/06/2018.
-//  Copyright © 2018 Gustavo Melki. All rights reserved.
-//
-
 import UIKit
 
 class CollectionViewController: UIViewController {
   
   var arrayArticles = [Article]()
+  let userDefaults = UserDefaults.standard
   
   override func viewDidLoad() {
     super.viewDidLoad()    
@@ -28,9 +21,13 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     
     cell.imageView?.sd_setImage(with: URL(string: (arrayArticles[indexPath.row].media?.first?.uri)!))
     
+    let likedArticles = userDefaults.object(forKey: "liked") as? [String] ?? [String]()
+    if likedArticles.contains(arrayArticles[indexPath.row].sku!) {
+      cell.likedArticleLabel.isHidden = false
+    } else {
+      cell.likedArticleLabel.isHidden = true
+    }
+    
     return cell
   }
-  
-  
-  
 }

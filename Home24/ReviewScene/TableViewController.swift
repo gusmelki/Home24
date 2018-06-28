@@ -1,11 +1,3 @@
-//
-//  TableViewController.swift
-//  Home24
-//
-//  Created by Gustavo Melki Leal on 28/06/2018.
-//  Copyright © 2018 Gustavo Melki. All rights reserved.
-//
-
 import UIKit
 
 class TableViewController: UIViewController {
@@ -15,11 +7,6 @@ class TableViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    let likedArticles = userDefaults.object(forKey: "liked") as? [String] ?? [String]()
-    print(likedArticles.count)
-    print(likedArticles)
-    
   }
 }
 
@@ -34,12 +21,18 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
     
-    cell.textLabel?.text = arrayArticles[indexPath.row].title
-    cell.imageView?.sd_setImage(with: URL(string: (arrayArticles[indexPath.row].media?.first?.uri)!))
+    cell.articleNameLabel.text = arrayArticles[indexPath.row].title
+    cell.articleImgView?.sd_setImage(with: URL(string: (arrayArticles[indexPath.row].media?.first?.uri)!))
+  
+    let likedArticles = userDefaults.object(forKey: "liked") as? [String] ?? [String]()
+    if likedArticles.contains(arrayArticles[indexPath.row].sku!) {
+      cell.likedArticleLabel.isHidden = false
+    } else {
+      cell.likedArticleLabel.isHidden = true
+    }
     
     return cell
   }
-  
 }

@@ -103,8 +103,6 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   @IBAction func reviewBtn(_ sender: Any) {
 
   }
-  
-  
 }
 
 extension SelectionViewController: KolodaViewDelegate {
