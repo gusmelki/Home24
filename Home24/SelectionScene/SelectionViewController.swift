@@ -3,7 +3,8 @@ import Koloda
 import SDWebImage
 
 protocol SelectionDisplayLogic: class {
-  func displaySomething(viewModel: Selection.Something.ViewModel)
+  func displayArticles(viewModel: Selection.ArticleApi.ViewModel)
+  func displayError(viewModel: Selection.ErrorApi.ViewModel)
 }
 
 class SelectionViewController: UIViewController, SelectionDisplayLogic {
@@ -53,6 +54,8 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   @IBOutlet weak var selectionView: KolodaView!
   @IBOutlet weak var amountArticlesLabel: UILabel!
   @IBOutlet weak var amountLikedArticlesLabel: UILabel!
+  @IBOutlet weak var placeHolderLabel: UILabel!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   var arrayArticles = [Article]()
   var totalLiked = 0
@@ -73,14 +76,20 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
     
     self.reviewBtn.isEnabled = false
     self.reviewBtn.backgroundColor = UIColor.gray
+    self.placeHolderLabel.isHidden = true
   }
   
   func doSomething() {
-    let request = Selection.Something.Request()
-    interactor?.doSomething(request: request)
+    self.activityIndicator.startAnimating()
+    let request = Selection.ArticleApi.Request()
+    interactor?.doResquestApi(request: request)
   }
   
-  func displaySomething(viewModel: Selection.Something.ViewModel) {
+  func displayArticles(viewModel: Selection.ArticleApi.ViewModel) {
+    
+    self.activityIndicator.stopAnimating()
+    self.activityIndicator.hidesWhenStopped = true
+    
     if let totalArticles = viewModel.articles?.count {
       self.amountArticlesLabel.text = "/ \(totalArticles)"
     }
@@ -90,6 +99,12 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
       }
     }
     selectionView.reloadData()
+  }
+  
+  func displayError(viewModel: Selection.ErrorApi.ViewModel) {
+    let alert = UIAlertController(title: "Error", message: viewModel.errorMsg, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+    self.present(alert, animated: true)
   }
   
   @IBAction func likeBtn(_ sender: Any) {
@@ -110,6 +125,7 @@ extension SelectionViewController: KolodaViewDelegate {
   func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
     self.reviewBtn.isEnabled = true
     self.reviewBtn.backgroundColor = UIColor.orange
+    self.placeHolderLabel.isHidden = false
     
     self.userDefaults.set(likedArticles, forKey: "liked")
   }
@@ -132,7 +148,6 @@ extension SelectionViewController: KolodaViewDelegate {
 }
 
 // MARK: KolodaViewDataSource
-
 extension SelectionViewController: KolodaViewDataSource {
   
   func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {

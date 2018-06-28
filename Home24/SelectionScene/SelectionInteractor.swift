@@ -2,7 +2,7 @@ import UIKit
 import RxSwift
 
 protocol SelectionBusinessLogic {
-  func doSomething(request: Selection.Something.Request)
+  func doResquestApi(request: Selection.ArticleApi.Request)
 }
 
 protocol SelectionDataStore {
@@ -15,14 +15,16 @@ class SelectionInteractor: SelectionBusinessLogic, SelectionDataStore {
   
   let disposeBag = DisposeBag()
   
-  func doSomething(request: Selection.Something.Request) {
+  func doResquestApi(request: Selection.ArticleApi.Request) {
     worker = SelectionWorker()
     worker?.doSomeWork()
     
     Home24Manager.getArticles().subscribe(onNext: { (result) in
-      let response = Selection.Something.Response(articles: result.embedded?.articles)
-      self.presenter?.presentSomething(response: response)
+      let response = Selection.ArticleApi.Response(articles: result.embedded?.articles)
+      self.presenter?.presentArticles(response: response)
     }, onError: { (error) in
+      let erroMsg = Selection.ErrorApi.Response(errorMsg: "Something goes worng =(. Try again later.")
+      self.presenter?.presentErrorMsg(response: erroMsg)
       print(error)
     }, onCompleted: {
       print("onCompleted")

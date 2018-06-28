@@ -15,7 +15,7 @@ import UIKit
 enum Selection {
   // MARK: Use cases
   
-  enum Something {
+  enum ArticleApi {
     struct Request {
     }
     struct Response {
@@ -25,4 +25,14 @@ enum Selection {
       var articles : [Article]?
     }
   }
+  
+  enum ErrorApi {
+    struct Response {
+      var errorMsg : String
+    }
+    struct ViewModel {
+      var errorMsg : String
+    }
+  }
+  
 }

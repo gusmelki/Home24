@@ -1,7 +1,8 @@
 import UIKit
 
 protocol SelectionPresentationLogic {
-  func presentSomething(response: Selection.Something.Response)
+  func presentArticles(response: Selection.ArticleApi.Response)
+  func presentErrorMsg(response: Selection.ErrorApi.Response)
 }
 
 class SelectionPresenter: SelectionPresentationLogic {
@@ -9,8 +10,14 @@ class SelectionPresenter: SelectionPresentationLogic {
   
   // MARK: Do something
   
-  func presentSomething(response: Selection.Something.Response) {
-    let viewModel = Selection.Something.ViewModel(articles: response.articles)
-    viewController?.displaySomething(viewModel: viewModel)
+  func presentArticles(response: Selection.ArticleApi.Response) {
+    let viewModel = Selection.ArticleApi.ViewModel(articles: response.articles)
+    viewController?.displayArticles(viewModel: viewModel)
+  }
+  
+  func presentErrorMsg(response: Selection.ErrorApi.Response) {
+    let viewModel = Selection.ErrorApi.ViewModel(errorMsg: response.errorMsg)
+    viewController?.displayError(viewModel: viewModel)
+    
   }
 }
