@@ -40,17 +40,10 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   // MARK: Routing
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
     if segue.identifier == "showReview" {
-  
+      let controller = segue.destination as! TabViewController
+      controller.arrayArticles = self.arrayArticles
       
-      if segue.identifier == "showReview" {
-       
-          let controller = segue.destination as! TabViewController
-          controller.arrayArticles = self.arrayArticles
-        
-      }
-     
     }
   }
   
@@ -58,7 +51,13 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   
   @IBOutlet weak var reviewBtn: UIButton!
   @IBOutlet weak var selectionView: KolodaView!
+  @IBOutlet weak var amountArticlesLabel: UILabel!
+  @IBOutlet weak var amountLikedArticlesLabel: UILabel!
+  
   var arrayArticles = [Article]()
+  var totalLiked = 0
+  let userDefaults = UserDefaults.standard
+  var likedArticles = [String]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -74,7 +73,6 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
     
     self.reviewBtn.isEnabled = false
     self.reviewBtn.backgroundColor = UIColor.gray
-    
   }
   
   func doSomething() {
@@ -83,13 +81,14 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   }
   
   func displaySomething(viewModel: Selection.Something.ViewModel) {
-    
+    if let totalArticles = viewModel.articles?.count {
+      self.amountArticlesLabel.text = "/ \(totalArticles)"
+    }
     if let articles = viewModel.articles {
       for article in articles{
         arrayArticles.append(article)
       }
     }
-    
     selectionView.reloadData()
   }
   
@@ -113,24 +112,25 @@ extension SelectionViewController: KolodaViewDelegate {
   func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
     self.reviewBtn.isEnabled = true
     self.reviewBtn.backgroundColor = UIColor.orange
-  
+    
+    self.userDefaults.set(likedArticles, forKey: "liked")
   }
   
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
     
-    
-    
   }
   
   func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-    
-    
     if direction == SwipeResultDirection(rawValue: "right") {
+      totalLiked += 1
       
-    }
+      UIView.transition(with: amountLikedArticlesLabel, duration: 0.5, options: [.transitionFlipFromBottom], animations: {
+        self.amountLikedArticlesLabel.text = "\(self.totalLiked)"
+      }, completion: nil)
     
+      likedArticles.append(arrayArticles[index].sku!)
+    }
   }
-  
 }
 
 // MARK: KolodaViewDataSource
