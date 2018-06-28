@@ -13,19 +13,19 @@
         <!--Home 24-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StarScreenViewController" customModule="Home24" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Sg7-nd-mN4">
-                                <rect key="frame" x="20" y="124" width="335" height="124"/>
+                                <rect key="frame" x="20" y="112.5" width="335" height="142"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32z-jp-dCc">
-                                <rect key="frame" x="20" y="308" width="335" height="50"/>
+                                <rect key="frame" x="20" y="517" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.32941176470588235" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="JUB-zj-erc"/>
+                                    <constraint firstAttribute="height" constant="50" id="oaV-8h-nbN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="START">
@@ -38,24 +38,26 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="32z-jp-dCc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Bk8-EP-Y6x"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="32z-jp-dCc" secondAttribute="trailing" constant="20" id="HLg-Yv-Vqd"/>
-                            <constraint firstItem="32z-jp-dCc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R3V-0X-2TH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sg7-nd-mN4" secondAttribute="trailing" constant="20" id="Si9-b4-IMZ"/>
-                            <constraint firstItem="Sg7-nd-mN4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XeS-fu-F4t"/>
-                            <constraint firstItem="32z-jp-dCc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ir2-Rd-WLZ"/>
-                            <constraint firstItem="Sg7-nd-mN4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="u9a-Yg-WM3"/>
-                            <constraint firstItem="32z-jp-dCc" firstAttribute="top" secondItem="Sg7-nd-mN4" secondAttribute="bottom" constant="60" id="xMg-TW-JZf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="32z-jp-dCc" secondAttribute="bottom" constant="100" id="Oeb-PP-O5V"/>
+                            <constraint firstItem="32z-jp-dCc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Q1J-TO-MBK"/>
+                            <constraint firstItem="Sg7-nd-mN4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T9T-sK-OOf"/>
+                            <constraint firstItem="Sg7-nd-mN4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fM6-ZF-BNb"/>
+                            <constraint firstItem="Sg7-nd-mN4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="gdC-H0-UUy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sg7-nd-mN4" secondAttribute="trailing" constant="20" id="rmD-e4-8hi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="32z-jp-dCc" secondAttribute="trailing" constant="20" id="s42-dK-Ui3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home 24" id="c1f-nz-4nT">
                         <barButtonItem key="backBarButtonItem" title="Back" id="4NN-oK-RWb"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="logoView" destination="Sg7-nd-mN4" id="cYa-bv-ovG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.79999999999995" y="95.802098950524751"/>
+            <point key="canvasLocation" x="982" y="96"/>
         </scene>
         <!--Selection-->
         <scene sceneID="gPc-zc-uCa">

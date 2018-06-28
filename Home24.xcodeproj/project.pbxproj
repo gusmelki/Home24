@@ -13,6 +13,7 @@
 		1AD1C33E20E52A7D00808E42 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1C33D20E52A7D00808E42 /* CollectionViewController.swift */; };
 		1AD1C34320E54A2900808E42 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1C34220E54A2900808E42 /* CollectionViewCell.swift */; };
 		1AD1C34520E5590B00808E42 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1C34420E5590B00808E42 /* TableViewCell.swift */; };
+		1AD1C34720E56D8D00808E42 /* StarScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1C34620E56D8D00808E42 /* StarScreenViewController.swift */; };
 		EC1B166720E0245800866F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1B166620E0245800866F42 /* AppDelegate.swift */; };
 		EC1B166C20E0245800866F42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1B166A20E0245800866F42 /* Main.storyboard */; };
 		EC1B166E20E0245900866F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1B166D20E0245900866F42 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		1AD1C33D20E52A7D00808E42 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		1AD1C34220E54A2900808E42 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		1AD1C34420E5590B00808E42 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		1AD1C34620E56D8D00808E42 /* StarScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarScreenViewController.swift; sourceTree = "<group>"; };
 		5B4C002DC22190B9278E5C9A /* Pods-Home24.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home24.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Home24/Pods-Home24.debug.xcconfig"; sourceTree = "<group>"; };
 		9E202086CBDECBCBAA628019 /* Pods_Home24.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home24.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1B166320E0245800866F42 /* Home24.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home24.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 				EC1B168220E0346700866F42 /* Services */,
 				EC1B168320E034CA00866F42 /* Models */,
 				EC1B166620E0245800866F42 /* AppDelegate.swift */,
+				1AD1C34620E56D8D00808E42 /* StarScreenViewController.swift */,
 				EC1B166A20E0245800866F42 /* Main.storyboard */,
 				EC1B166D20E0245900866F42 /* Assets.xcassets */,
 				EC1B166F20E0245900866F42 /* LaunchScreen.storyboard */,
@@ -323,6 +326,7 @@
 				EC1B168E20E046AE00866F42 /* SelectionWorker.swift in Sources */,
 				EC1B167F20E02BC700866F42 /* Article.swift in Sources */,
 				1AD1C33A20E525AD00808E42 /* TabViewController.swift in Sources */,
+				1AD1C34720E56D8D00808E42 /* StarScreenViewController.swift in Sources */,
 				EC1B168520E03DE100866F42 /* Media.swift in Sources */,
 				EC1B167920E025F000866F42 /* Home24Service.swift in Sources */,
 				EC1B169220E046AE00866F42 /* SelectionInteractor.swift in Sources */,
