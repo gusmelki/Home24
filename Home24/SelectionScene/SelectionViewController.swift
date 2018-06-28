@@ -40,16 +40,23 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   // MARK: Routing
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
+    
+    if segue.identifier == "showReview" {
+  
+      
+      if segue.identifier == "showReview" {
+       
+          let controller = segue.destination as! TabViewController
+          controller.arrayArticles = self.arrayArticles
+        
       }
+     
     }
   }
   
   // MARK: View lifecycle
   
+  @IBOutlet weak var reviewBtn: UIButton!
   @IBOutlet weak var selectionView: KolodaView!
   var arrayArticles = [Article]()
   
@@ -64,6 +71,10 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
     selectionView.delegate = self
   
     self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+    
+    self.reviewBtn.isEnabled = false
+    self.reviewBtn.backgroundColor = UIColor.gray
+    
   }
   
   func doSomething() {
@@ -91,8 +102,7 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
   }
   
   @IBAction func reviewBtn(_ sender: Any) {
-    
-    
+
   }
   
   
@@ -101,10 +111,23 @@ class SelectionViewController: UIViewController, SelectionDisplayLogic {
 extension SelectionViewController: KolodaViewDelegate {
   
   func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+    self.reviewBtn.isEnabled = true
+    self.reviewBtn.backgroundColor = UIColor.orange
   
   }
   
   func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+    
+    
+    
+  }
+  
+  func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+    
+    
+    if direction == SwipeResultDirection(rawValue: "right") {
+      
+    }
     
   }
   

@@ -20,16 +20,6 @@ DEPENDENCIES:
   - Moya/RxSwift (~> 11.0)
   - SDWebImage (~> 4.0)
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Alamofire
-    - Koloda
-    - Moya
-    - pop
-    - Result
-    - RxSwift
-    - SDWebImage
-
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
@@ -41,4 +31,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 1605fdfc5bbc6dfc488b4ff68ec6f52d2372ac01
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0
