@@ -6,7 +6,7 @@
 
 - Clone this `repo` and `cd` into this directory.
 - Run pod install to download and build `Cocoapods` dependencies.
-- Open the project by running open `Speech.xcworkspace`.
+- Open the project by running open `Home24.xcworkspace`.
 - Build and run the app.
 
 ### About the code
